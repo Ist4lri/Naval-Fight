@@ -1,8 +1,8 @@
-public class Shipp {
+public class Ship {
     private int shippLifePoints;
     private String name;
 
-    Shipp(int shippLifePoints, String name) {
+    Ship(int shippLifePoints, String name) {
         this.shippLifePoints = shippLifePoints;
         this.name = name;
     }
@@ -21,5 +21,9 @@ public class Shipp {
 
     public void takeAHit() {
         this.shippLifePoints--;
+    }
+
+    public String toString() {
+        return ("The " + this.name + " has " + this.shippLifePoints + " PV.");
     }
 }
