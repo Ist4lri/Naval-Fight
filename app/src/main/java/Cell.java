@@ -7,23 +7,23 @@ public class Cell {
         this.hasBeenShot = hasBeenShot;
     }
 
-    Ship getShip() {
+    public Ship getShip() {
         return this.ship;
     }
 
-    void setShip(Ship ship) {
+    public void setShip(Ship ship) {
         this.ship = ship;
     }
 
-    boolean hasShip() {
+    public boolean hasShip() {
         return this.ship != null;
     }
 
-    ShotResult takeAShot() {
+    public ShotResult takeAShot() {
         return ShotResult.SHOT;
     }
 
-    boolean getHasBeenShot() {
+    public boolean getHasBeenShot() {
         return this.hasBeenShot;
     }
 }
