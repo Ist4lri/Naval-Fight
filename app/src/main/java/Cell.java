@@ -2,9 +2,9 @@ public class Cell {
     private Ship ship;
     private boolean hasBeenShot;
 
-    Cell(Ship ship, boolean hasBeenShot) {
-        this.ship = ship;
-        this.hasBeenShot = hasBeenShot;
+    public Cell() {
+        this.ship = null;
+        this.hasBeenShot = false;
     }
 
     public Ship getShip() {
@@ -20,6 +20,19 @@ public class Cell {
     }
 
     public ShotResult takeAShot() {
+        if (getHasBeenShot() || !hasShip()) {
+            this.hasBeenShot = true;
+            return ShotResult.MISSED;
+        }
+        this.hasBeenShot = true;
+        Ship attackedShip = this.getShip();
+        if (attackedShip.hasBeenSunk()) {
+            return ShotResult.MISSED;
+        }
+        attackedShip.takeAHit();
+        if (attackedShip.hasBeenSunk()) {
+            return ShotResult.SUNK;
+        }
         return ShotResult.SHOT;
     }
 

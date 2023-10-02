@@ -16,11 +16,13 @@ public class Ship {
     }
 
     public boolean hasBeenSunk() {
-        return getShippLifePoints() <= 0;
+        return getShippLifePoints() == 0;
     }
 
     public void takeAHit() {
-        this.shippLifePoints--;
+        if (this.shippLifePoints != 0) {
+            this.shippLifePoints--;
+        }
     }
 
     public String toString() {
