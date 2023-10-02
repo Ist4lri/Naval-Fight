@@ -36,7 +36,7 @@ public class GridPrinter {
     }
 
     private void printRow(int row) {
-        String lineToDisplay = " " + row + " |";
+        String lineToDisplay = "| " + row + " |";
         for (int index = 0; index < grid.getWidth(); index++) {
             lineToDisplay += stringACell(new Coordinates(row, index));
         }
@@ -44,8 +44,11 @@ public class GridPrinter {
     }
 
     private void printCoordinatesRow() {
-        System.out
-                .println(stringASquare(BLANK_CHARACTER) + stringASquare('A') + stringASquare('B') + stringASquare('C'));
+        String lineToDisplay = "|   |";
+        for (int index = 0; index < grid.getWidth(); index++) {
+            lineToDisplay += " " + index + " |";
+        }
+        System.out.println(lineToDisplay);
     }
 
     private void printLine() {
