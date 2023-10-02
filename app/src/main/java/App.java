@@ -3,11 +3,12 @@
  */
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Grid gameGrid = new Grid(3, 3);
+        Ship oneShip = new Ship(2, "Test");
+        gameGrid.putShip(oneShip, new Coordinates(0, 1), Orientation.VERTICAL);
+        BattleShipGame game = new BattleShipGame(gameGrid);
+        game.playGame();
     }
 }
