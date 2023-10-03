@@ -18,6 +18,7 @@ public class BattleShipGame {
         do {
             playTurn();
             this.gridPrinter.printGrid();
+            this.turnCount++;
         } while (!this.grid.isCompleted());
         printWinningMessage();
     }
@@ -49,9 +50,9 @@ public class BattleShipGame {
     }
 
     public Coordinates collectCoordinates() {
-        String input = scanner.next("\\d\\d");
-        String[] splittedFields = input.split("");
-        return new Coordinates(Integer.parseInt(splittedFields[0]), Integer.parseInt(splittedFields[1]));
+        System.out.println("Put Coordinates to Bomb : ");
+        int coordinates = scanner.nextInt();
+        return new Coordinates(coordinates / 10, coordinates % 10);
     }
 
     public void printWinningMessage() {

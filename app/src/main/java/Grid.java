@@ -65,7 +65,7 @@ public class Grid {
         for (int rowIndex = 0; rowIndex < this.width; rowIndex++) {
             for (int columnIndex = 0; columnIndex < this.height; columnIndex++) {
                 Cell cellAnalyzed = getCell(new Coordinates(rowIndex, columnIndex));
-                if (!cellAnalyzed.getShip().hasBeenSunk()) {
+                if (cellAnalyzed.getShip() != null && !cellAnalyzed.getShip().hasBeenSunk()) {
                     return false;
                 }
             }

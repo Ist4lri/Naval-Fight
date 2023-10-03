@@ -15,9 +15,10 @@ public class GridPrinter {
         printLine();
         printCoordinatesRow();
         for (int index = 0; index < this.grid.getHeight(); index++) {
-            printRow(index);
             printLine();
+            printRow(index);
         }
+        printLine();
     }
 
     private String stringASquare(char oneChar) {
