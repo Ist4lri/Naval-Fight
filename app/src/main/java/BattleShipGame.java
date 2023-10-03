@@ -14,6 +14,7 @@ public class BattleShipGame {
     }
 
     public void playGame() {
+        this.gridPrinter.printGrid();
         do {
             playTurn();
             this.gridPrinter.printGrid();

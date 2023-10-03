@@ -10,9 +10,8 @@ public class Position {
     }
 
     Coordinates[] shipCoordinates() {
-        Coordinates[] shipCoordinates = new Coordinates[this.shipLenght];
-        shipCoordinates[0] = this.firstCellCoordinates;
-        for (int i = 1; i <= this.shipLenght; i++) {
+        Coordinates[] shipCoordinates = new Coordinates[this.shipLenght + 1];
+        for (int i = 0; i <= this.shipLenght; i++) {
             if (this.shipOrientation == Orientation.HORIZONTAL) {
                 shipCoordinates[i] = new Coordinates(firstCellCoordinates.getX() + i, firstCellCoordinates.getY());
             } else {

@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) {
         Grid gameGrid = new Grid(3, 3);
         Ship oneShip = new Ship(2, "Test");
-        gameGrid.putShip(oneShip, new Coordinates(0, 1), Orientation.VERTICAL);
+        gameGrid.putShip(oneShip, new Coordinates(0, 0), Orientation.VERTICAL);
         BattleShipGame game = new BattleShipGame(gameGrid);
         game.playGame();
     }
