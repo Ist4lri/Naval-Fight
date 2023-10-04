@@ -10,5 +10,7 @@ public class App {
         gameGrid.putShip(oneShip, new Coordinates(0, 0), Orientation.VERTICAL);
         BattleShipGame game = new BattleShipGame(gameGrid);
         game.playGame();
+
+        // A revenir quand on saura faire des interface
     }
 }

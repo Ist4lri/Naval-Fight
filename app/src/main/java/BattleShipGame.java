@@ -14,7 +14,6 @@ public class BattleShipGame {
     }
 
     public void playGame() {
-        this.gridPrinter.printGrid();
         do {
             playTurn();
             this.gridPrinter.printGrid();
@@ -33,7 +32,6 @@ public class BattleShipGame {
     }
 
     public void printShotResult() {
-        scanner.nextLine();
         Coordinates coordinateToShot = collectCoordinates();
         ShotResult result = grid.shootAt(coordinateToShot);
         switch (result) {
@@ -52,14 +50,8 @@ public class BattleShipGame {
 
     public Coordinates collectCoordinates() {
         System.out.println("Put Coordinates to Bomb : ");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Invalid input. Please enter valid coordinates: ");
-            scanner.next(); // Lire et ignorer l'entrée non valide
-        }
         int input = scanner.nextInt();
-        int row = input / 10; // Les dizaines représentent la ligne
-        int col = input % 10; // Les unités représentent la colonne
-        return new Coordinates(row, col);
+        return new Coordinates(input / 10, input % 10);
     }
 
     public void printWinningMessage() {
