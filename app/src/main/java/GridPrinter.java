@@ -31,9 +31,8 @@ public class GridPrinter {
         }
         if (this.grid.hasShipAt(coordinates) && this.grid.hasBeenShotAt(coordinates)) {
             return stringASquare(HIT_CHARACTER);
-        } else {
-            return stringASquare(BLANK_CHARACTER);
         }
+        return stringASquare(BLANK_CHARACTER);
     }
 
     private void printRow(int row) {
